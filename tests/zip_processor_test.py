@@ -25,7 +25,8 @@ class ZipProcessorTester(unittest.TestCase):
 
         self.zip_config = zc.ZipProcessorConfig(
             directory_path=directory_path,
-            zip_target_path=zip_target_path
+            zip_target_path=zip_target_path,
+            ignore_regexps=[]
         )
 
     def test_execute(self):
