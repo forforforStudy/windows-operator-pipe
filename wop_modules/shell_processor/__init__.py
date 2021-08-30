@@ -10,8 +10,12 @@ class ShellProcessor(object):
         self._cwd = cwd
 
     def execute(self, cmd: str):
-        return subprocess.Popen(
+        process = subprocess.Popen(
             cmd,
             shell=True,
             cwd=self._cwd
         )
+
+        process.wait()
+
+        return process

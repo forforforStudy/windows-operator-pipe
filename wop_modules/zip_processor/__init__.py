@@ -10,8 +10,7 @@ class ZipProcessor(object):
     """
     执行zip压缩运行能力
     """
-    @staticmethod
-    def execute(config: ZipProcessorConfig):
+    def execute(self, config: ZipProcessorConfig):
         zip_target_path = config.zip_target_path
         directory_path = config.directory_path
         ignore_regexps = config.ignore_regexps

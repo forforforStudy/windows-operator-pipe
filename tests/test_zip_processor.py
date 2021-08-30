@@ -30,6 +30,6 @@ class ZipProcessorTester(unittest.TestCase):
         )
 
     def test_execute(self):
-        zp.ZipProcessor.execute(self.zip_config)
+        zp.ZipProcessor().execute(self.zip_config)
 
         self.assertTrue(path.exists(self.zip_config.zip_target_path))
