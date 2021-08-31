@@ -16,7 +16,8 @@ class CopyacutProcessor(object):
     def private_copy_execute(from_path: str, to_path: str):
         # from_path is file
         if path.isdir(from_path):
-            shutil.copytree(from_path, to_path)
+            base_name = path.basename(from_path)
+            shutil.copytree(from_path, path.join(to_path, base_name))
         else:
             shutil.copy(from_path, to_path)
 
