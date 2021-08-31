@@ -67,6 +67,14 @@ class CopyacutProcessorTester(unittest.TestCase):
         self.assertTrue(path.exists(target_copy_path))
         self.assertTrue(len(os.listdir(target_copy_path)) > 0)
 
+        # 覆盖模式检测
+        copy_dir_config.override = True
+        copy_processor.execute_copy_and_cut()
+
+        # 覆盖模式执行检测
+        self.assertTrue(path.exists(target_copy_path))
+        self.assertTrue(len(os.listdir(target_copy_path)) > 0)
+
     def test_cut_directory(self):
         # 剪切目录配置
         cut_dir_config = CopyacutProcessorConfig(
@@ -80,6 +88,14 @@ class CopyacutProcessorTester(unittest.TestCase):
         cut_processor.execute_copy_and_cut()
 
         # 剪切断言检测
+        self.assertTrue(len(os.listdir(cut_dir_config.to_path)) > 0)
+
+        # 覆盖模式检测
+        self.setUp()
+        cut_dir_config.override = True
+        cut_processor.execute_copy_and_cut()
+
+        # 覆盖模式执行检测
         self.assertTrue(len(os.listdir(cut_dir_config.to_path)) > 0)
 
     def test_copy_file(self):
@@ -102,6 +118,15 @@ class CopyacutProcessorTester(unittest.TestCase):
             path.exists(path.join(copy_file_config.to_path, copy_filename))
         )
 
+        # 覆盖模式检测
+        copy_file_config.override = True
+        copy_file_processor.execute_copy_and_cut()
+
+        # 覆盖模式执行检测
+        self.assertTrue(
+            path.exists(path.join(copy_file_config.to_path, copy_filename))
+        )
+
     def test_cut_file(self):
         copyacut_from_path = CopyacutProcessorTester.copyacut_from_path
         origin_from_path_files = os.listdir(copyacut_from_path)
@@ -118,6 +143,20 @@ class CopyacutProcessorTester(unittest.TestCase):
 
         cut_file_processor = CopyacutProcessor(config=cut_file_config)
         cut_file_processor.execute_copy_and_cut()
+
+        self.assertTrue(
+            path.exists(path.join(cut_file_config.to_path, cut_filename))
+        )
+        self.assertTrue(
+            len(os.listdir(copyacut_from_path)) + 1 == len(origin_from_path_files)
+        )
+
+        # 覆盖模式检测
+        self.setUp()
+        cut_file_config.override = True
+        cut_file_processor.execute_copy_and_cut()
+
+        # 覆盖模式执行检测
 
         self.assertTrue(
             path.exists(path.join(cut_file_config.to_path, cut_filename))
