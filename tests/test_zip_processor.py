@@ -1,17 +1,17 @@
 import os
-import shutil
 import time
 import unittest
 import os.path as path
 
 import wop_modules.zip_processor as zp
 import wop_modules.zip_processor.zip_processor_config as zc
+import context_util
 
 
 class ZipProcessorTester(unittest.TestCase):
-    cur_dir = path.dirname(path.realpath(__file__))
+    cur_dir = context_util.cur_dir
 
-    zip_resource_temp_filepath = path.join(cur_dir, 'fixtures', 'zip_processor_zips')
+    zip_resource_temp_filepath = path.join(context_util.fixtures_dir, 'zip_processor_zips')
 
     @classmethod
     def setUpClass(cls) -> None:
