@@ -1,0 +1,4 @@
+tasks:
+  - action: shell
+    shell_config:
+      cmd: dir

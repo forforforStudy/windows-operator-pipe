@@ -10,6 +10,7 @@ class CopyacutProcessorConfig(object):
             from_path: str,
             to_path: str,
             override: bool = False,
+            # TODO: 实现skip
             skip_regexps: List[str] = None
     ):
         self.action = action
