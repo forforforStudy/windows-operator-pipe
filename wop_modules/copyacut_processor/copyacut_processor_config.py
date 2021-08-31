@@ -15,3 +15,4 @@ class CopyacutProcessorConfig(object):
         self.from_path = from_path
         self.to_path = to_path
         self.skip_regexps = [] if skip_regexps is None else skip_regexps
+
