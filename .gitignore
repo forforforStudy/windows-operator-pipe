@@ -1,3 +1,4 @@
 .idea
 *.pyc
 tests/fixtures/zip_processor_zips/*.zip
+tests/fixtures/pipe_factory_resources/results/*.zip

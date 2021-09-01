@@ -1,4 +1,18 @@
+root: ./fixtures/pipe_factory_resources
 tasks:
   - action: shell
     shell_config:
-      cmd: dir
+      cmd: dir > a.txt
+      cwd: .
+  - action: zip
+    zip_config:
+      fro: .
+      to: ./results/dist.zip
+      ignore:
+        - results
+  - action: copy_and_cut
+    copyacut_config:
+      action: copy
+      fro: ./results/dist.zip
+      to: ./copy_results/dist.zip
+      override: true

@@ -1,0 +1,12 @@
+ 驱动器 D 中的卷是 新加卷
+ 卷的序列号是 1E34-06CF
+
+ D:\github-workspaces\windows-operator-pipe\tests\fixtures\pipe_factory_resources 的目录
+
+2021/09/01  15:51    <DIR>          .
+2021/09/01  15:51    <DIR>          ..
+2021/09/01  15:55                 0 a.txt
+2021/09/01  15:52    <DIR>          copy_results
+2021/09/01  15:52    <DIR>          results
+               1 个文件              0 字节
+               4 个目录 747,839,447,040 可用字节

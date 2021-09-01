@@ -1,6 +1,5 @@
 import unittest
 import os.path as path
-from typing import Callable
 
 from tests.context_util import fixtures_dir
 from wop_modules.pipe_factory import ConfigParser, ConfigParserReturn
@@ -14,9 +13,11 @@ class PipeFactoryTester(unittest.TestCase):
         )
     )
 
-    def test_load_yaml(self):
-        parsed: ConfigParserReturn = PipeFactoryTester.config_parser.parser()
-        parsed['run']()
-
+    def test_pipe_config_yaml_run(self):
         self.assertTrue(type(PipeFactoryTester.config_parser.yaml_data) is dict)
 
+        try:
+            parsed: ConfigParserReturn = PipeFactoryTester.config_parser.parser()
+            parsed['run']()
+        except (Exception,):
+            self.fail('执行错误')
