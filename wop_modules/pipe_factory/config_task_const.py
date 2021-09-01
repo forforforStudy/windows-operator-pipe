@@ -1,7 +1,5 @@
 from enum import Enum
-from typing import List
-
-from wop_modules.copyacut_processor.copyacut_processor_action import CopyacutProcessorAction
+from typing import List, TypedDict, Union
 
 """
 yaml_data 的格式为:
@@ -24,25 +22,22 @@ tasks:
 """
 
 
-class ZipConfig(object):
-    def __init__(self, fro: str, to: str, ignore: List[str]):
-        self.fro = fro
-        self.to = to
-        self.ignore = ignore
+class ZipConfig(TypedDict):
+    fro: str
+    to: str
+    ignore: List[str]
 
 
-class ShellConfig(object):
-    def __init__(self, cmd: str, cwd: str):
-        self.cmd = cmd
-        self.cwd = cwd
+class ShellConfig(TypedDict):
+    cmd: str
+    cwd: str
 
 
-class CopyAndCutConfig(object):
-    def __init__(self, action: CopyacutProcessorAction, fro: str, to: str, override: bool):
-        self.action = action
-        self.fro = fro
-        self.to = to
-        self.override = override
+class CopyAndCutConfig(TypedDict):
+    action: str
+    fro: str
+    to: str
+    override: bool
 
 
 class ConfigActions(Enum):
