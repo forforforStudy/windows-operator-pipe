@@ -1,6 +1,3 @@
-from typing import List
-
-
 class ZipProcessorConfig(object):
 
     def __init__(self,
