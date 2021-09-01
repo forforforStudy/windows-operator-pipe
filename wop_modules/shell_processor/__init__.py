@@ -1,5 +1,6 @@
 import subprocess
 import os
+import os.path as path
 
 default_cwd = os.getcwd()
 
@@ -7,7 +8,7 @@ default_cwd = os.getcwd()
 class ShellProcessor(object):
 
     def __init__(self, cwd: str = default_cwd):
-        self._cwd = cwd
+        self._cwd = cwd if path.isabs(cwd) else path.join(default_cwd, cwd)
 
     def execute(self, cmd: str):
         process = subprocess.Popen(
