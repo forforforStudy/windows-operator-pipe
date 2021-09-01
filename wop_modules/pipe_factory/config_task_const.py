@@ -1,5 +1,5 @@
 from enum import Enum
-from typing import List, TypedDict, Union
+from typing import List, TypedDict
 
 """
 yaml_data 的格式为:
