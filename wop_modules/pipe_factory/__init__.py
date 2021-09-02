@@ -6,6 +6,7 @@ import pathlib
 
 from typing import List, TypedDict, Callable
 
+from wop_modules.pipe_factory import global_context
 from wop_modules.pipe_factory.config_task_const import ConfigActions, ZipConfig, ShellConfig, CopyAndCutConfig
 from wop_modules.copyacut_processor import CopyacutProcessor, CopyacutProcessorConfig, CopyacutProcessorAction
 from wop_modules.shell_processor import ShellProcessor
@@ -55,10 +56,12 @@ class ConfigParser(object):
         return {'run': lambda: [processor() for processor in tasks_processor]}
 
     def handle_os_path(self, any_path: str):
+        path_timestamp = global_context.context['timestamp']
+
         if path.isabs(any_path):
-            return any_path
+            return any_path.format(timestamp=path_timestamp)
         else:
-            return str(pathlib.WindowsPath(self.root).joinpath(any_path))
+            return str(pathlib.WindowsPath(self.root).joinpath(any_path)).format(timestamp=path_timestamp)
 
     def map_task_to_processor(self, task: TaskShaped) -> Callable:
         action = task['action']
