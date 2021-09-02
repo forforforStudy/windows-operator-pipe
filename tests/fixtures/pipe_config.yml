@@ -7,12 +7,12 @@ tasks:
   - action: zip
     zip_config:
       fro: .
-      to: ./results/dist.zip
+      to: ./results/dist.{timestamp}.zip
       ignore:
         - results
   - action: copy_and_cut
     copyacut_config:
       action: copy
-      fro: ./results/dist.zip
-      to: ./copy_results/dist.zip
+      fro: ./results/dist.{timestamp}.zip
+      to: ./copy_results/dist.{timestamp}.zip
       override: true
