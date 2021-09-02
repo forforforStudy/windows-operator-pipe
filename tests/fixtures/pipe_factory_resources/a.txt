@@ -3,10 +3,10 @@
 
  D:\github-workspaces\windows-operator-pipe\tests\fixtures\pipe_factory_resources 的目录
 
-2021/09/02  14:09    <DIR>          .
-2021/09/02  14:09    <DIR>          ..
-2021/09/02  14:09                 0 a.txt
-2021/09/02  14:08    <DIR>          copy_results
-2021/09/02  14:08    <DIR>          results
+2021/09/02  14:18    <DIR>          .
+2021/09/02  14:18    <DIR>          ..
+2021/09/02  14:18                 0 a.txt
+2021/09/02  14:09    <DIR>          copy_results
+2021/09/02  14:09    <DIR>          results
                1 个文件              0 字节
-               4 个目录 745,941,393,408 可用字节
+               4 个目录 745,941,143,552 可用字节
