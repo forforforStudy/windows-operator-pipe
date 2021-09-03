@@ -3,7 +3,7 @@ import unittest
 import os.path as path
 
 from tests.context_util import fixtures_dir, clean_path
-from wop_modules.pipe_factory import ConfigParser, ConfigParserReturn, global_context
+from wop_modules.pipe_factory import ConfigParser, ConfigParserReturn
 
 
 class PipeFactoryTester(unittest.TestCase):
