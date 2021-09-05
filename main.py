@@ -26,5 +26,11 @@ if __name__ == '__main__':
     else:
         config_parser = ConfigParser(config_file_path=config_path)
 
+        print('''
+        嗨，欢迎使用刚学python一周的兴趣者开发的一个window下的配置脚本工具
+        --
+        如果你看到这条消息说明运行成功， 使用愉快
+        ''')
+
         parsed: ConfigParserReturn = config_parser.parser()
         parsed['run']()
